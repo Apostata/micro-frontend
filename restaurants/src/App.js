@@ -2,6 +2,7 @@ import React, {Fragment as F} from 'react';
 import { useDispatch, useSelector, useStore } from "react-redux";
 
 const App = props =>{    
+    const {actions} = useStore();
     const language = useSelector(state=>state.language);
     return (
         <F>

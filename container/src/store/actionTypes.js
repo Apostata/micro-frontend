@@ -1,4 +1,5 @@
 export const types ={
     SET_LANGUAGE : 'SET_LANGUAGE',
-    GET_LANGUAGE : 'GET_LANGUAGE'
+    GET_LANGUAGE : 'GET_LANGUAGE',
+    SET_ANOTHER : 'SET_ANOTHER',
 };

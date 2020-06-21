@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import {useStore} from 'react-redux'
-import axios from 'axios'
+import {useStore} from 'react-redux';
+import {useMicrofrontend} from './hooks/useMicroFronted';
 
 const MicroFrontend = props=> {
     const Store = useStore();
-    const { name, host, document, history, window } = props;
+    const { name, document, history, window } = props;
 
     useEffect(()=>{   
         const scriptId = `micro-frontend-script-${name}`;
@@ -13,38 +13,25 @@ const MicroFrontend = props=> {
             return;
         }
 
-        axios.get(`${host}/${name}.js`)
-        .then(() => {
-            return new Promise((resolve, reject)=>{
-                const script = document.createElement('script');
-                script.id = scriptId;
-                script.crossOrigin = '';
-                script.src = `${host}/${name}.js`;
-                script.onerror= reject;
-                script.onload = resolve;
-                document.head.appendChild(script);
-            })            
-        }).then(()=>{
-            renderMicroFrontend();
-        })
-
-
+        useMicrofrontend(props, scriptId, renderMicroFrontend);
+       
         return ()=>{ //ummount
             window[`unmount${name}`](`${name}-container`); 
         }
     },[]);
 
 
-  const renderMicroFrontend = () => {
-    window[`render${name}`](`${name}-container`, history, Store);
+  const renderMicroFrontend = (actions) => {
+    const newStore = {...Store, actions}
+    window[`render${name}`](`${name}-container`, history, newStore);
   };
 
   
-return <main id={`${name}-container`} />;
+return <main id={`${name}-container`} style={{display:"block", width:"100%"}}/>;
   
 }
 
-MicroFrontend.defaultProps = {
+MicroFrontend.defaultProps = { // para passar para props as variveis de window
   document,
   window,
 };

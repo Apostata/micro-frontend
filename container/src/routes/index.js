@@ -6,7 +6,15 @@ import {routes} from './routes';
 const Routes = props =>{
     const renderRoutes = ()=>{
         return routes.map((route, idx)=>{
-            return <Route key={idx} exact={route.exact} path={route.path} component={route.component}/>
+            const useActions = route.useActions;
+            return(
+                <Route 
+                    key={idx} 
+                    exact={route.exact} 
+                    path={route.path}  
+                    render={()=><route.component useActions={useActions}/>}
+                />
+            );
         })
     }
     return(

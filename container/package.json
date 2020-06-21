@@ -12,10 +12,10 @@
     "start-order": "cd ../order && npm start",
     "build-container": "webpack --config=config/webpack.config.js -p",
     "install-all": "npm run install-container && npm run install-server, npm run install-restaurants && npm run install-order",
-    "install-container":"npm install",
-    "install-server":"cd ../server && npm start",
-    "install-restaurants":"cd ../restaurants && npm start",
-    "intall-order":"cd ../order && npm install"
+    "install-container": "npm install",
+    "install-server": "cd ../server && npm start",
+    "install-restaurants": "cd ../restaurants && npm start",
+    "intall-order": "cd ../order && npm install"
   },
   "author": "Rene Souza",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "@babel/core": "^7.10.2",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/polyfill": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
     "babel-loader": "^8.1.0",
