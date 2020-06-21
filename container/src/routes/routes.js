@@ -28,7 +28,7 @@ export const routes = [
         ]
     },
     {
-        path: '/italiano',
+        path: '/italiano', //forca o carregamento do microfrontend Restaurants se recarregar a página
         exact: true,
         name: 'Restaurants',
         component: Restaurants,
@@ -42,7 +42,7 @@ export const routes = [
         ]
     },
     {
-        path: '/japones',
+        path: '/japones', //forca o carregamento do microfrontend Restaurants se recarregar a página
         exact: true,
         name: 'Restaurants',
         component: Restaurants,
@@ -56,7 +56,7 @@ export const routes = [
         ]
     },
     {
-        path: '/order',
+        path: '/order', 
         exact: true,
         name: 'Order',
         component: Order,
@@ -67,7 +67,7 @@ export const routes = [
         ]
     },
     {
-        path: '/order/buy',
+        path: '/order/buy', //forca o carregamento do microfrontend Order se recarregar a página
         exact: true,
         name: 'Order',
         component: Order,
@@ -78,7 +78,7 @@ export const routes = [
         ]
     },
     {
-        path: '/order/list',
+        path: '/order/list', //forca o carregamento do microfrontend Order se recarregar a página
         exact: true,
         name: 'Order',
         component: Order,
