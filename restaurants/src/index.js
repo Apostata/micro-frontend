@@ -14,10 +14,3 @@ window.renderRestaurants = (containerId, history=null, Store=null) => {
 window.unmountRestaurants = containerId => {
     ReactDOM.unmountComponentAtNode(document.getElementById(containerId));
 };
-
-
-// if(window.Restaurants === undefined) {
-//   import('./store').then(Store=>{
-//     window.renderRestaurants('root', null, Store.default);
-//   })
-// }

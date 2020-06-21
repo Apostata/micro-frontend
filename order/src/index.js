@@ -14,10 +14,3 @@ window.renderOrder = (containerId, history=null, Store=null) => {
 window.unmountOrder = containerId => {
     ReactDOM.unmountComponentAtNode(document.getElementById(containerId));
 };
-
-
-// if(window.Order === undefined) {
-//   import('./store').then(Store=>{
-//     window.renderOrder('root', null, Store.default);
-//   })
-// }

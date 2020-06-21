@@ -5,10 +5,10 @@ import Header from './components/header';
 // import MicroFrontend from './MicroFrontend';
 import Routes from './routes';
 import {setLanguage} from 'Actions/language';
-import { useDispatch, useSelector, useStore } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const App = props =>{
-    const {language} = useSelector(state=>state); 
+    const language = useSelector(state=>state.language); 
     const dispatch = useDispatch();
     return (
         <F>
