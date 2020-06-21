@@ -28,6 +28,34 @@ export const routes = [
         ]
     },
     {
+        path: '/italiano',
+        exact: true,
+        name: 'Restaurants',
+        component: Restaurants,
+        useActions:[
+            {
+                actionCreator:'language', actions:['setLanguage', 'getLanguage']
+            },
+            {
+                actionCreator:'another', actions:['setAnother']
+            }
+        ]
+    },
+    {
+        path: '/japones',
+        exact: true,
+        name: 'Restaurants',
+        component: Restaurants,
+        useActions:[
+            {
+                actionCreator:'language', actions:['setLanguage', 'getLanguage']
+            },
+            {
+                actionCreator:'another', actions:['setAnother']
+            }
+        ]
+    },
+    {
         path: '/order',
         exact: true,
         name: 'Order',
@@ -38,4 +66,28 @@ export const routes = [
             }
         ]
     },
+    {
+        path: '/order/buy',
+        exact: true,
+        name: 'Order',
+        component: Order,
+        useActions:[
+            {
+                actionCreator:'language', actions:['setLanguage']
+            }
+        ]
+    },
+    {
+        path: '/order/list',
+        exact: true,
+        name: 'Order',
+        component: Order,
+        useActions:[
+            {
+                actionCreator:'language', actions:['setLanguage']
+            }
+        ]
+    }
+    
+    
 ]

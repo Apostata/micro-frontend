@@ -1,5 +1,8 @@
 import React, {Fragment as F} from 'react';
 import { useSelector, useStore } from "react-redux";
+import { BrowserRouter as Router} from 'react-router-dom';
+import Routes from './routes';
+import Header from './components/Header';
 
 const App = props =>{
     const {actions} = useStore();
@@ -8,6 +11,10 @@ const App = props =>{
     return (
         <F>
             <h1>Hello Order {language}</h1>
+            <Router>
+                <Header/>
+                <Routes/>
+            </Router>
         </F>
     );
 };
