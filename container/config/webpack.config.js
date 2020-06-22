@@ -14,7 +14,7 @@ const webpackConfig = {
     output:{
         filename:'js/[name].js',
         path: path.resolve(__dirname, '../public'),
-        publicPath:'/'
+        publicPath:'/',
     },
     devtool: ENV === 'production' ? 'source-map' : 'eval-source-map',
     module: {
@@ -27,6 +27,10 @@ const webpackConfig = {
             Actions: path.resolve(__dirname, '../src/store/actions/'), //to dynamic import
         },
         extensions: [ '.js']
+    },
+    externals: {
+        'react': 'React',
+        'react-dom': 'ReactDOM'
     }
 };
 

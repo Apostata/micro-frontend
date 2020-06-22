@@ -7,15 +7,9 @@ const ENV = process.env.NODE_ENV;
 const webpackConfig = {
     mode: ENV !== 'development' || ENV !== 'standlone' ? 'production' : 'development', //modo
     context: path.resolve(__dirname, '../src'),
-    entry: ENV !== 'standalone'?
-        {
-            Restaurants:['./index.js']
-        }:
-        {   
-            react:['react'],
-            react_dom:['react-dom'],
-            Restaurants:['./index.js']
-        },
+    entry:{   
+        Restaurants:['./index.js']
+    },
     output:{
         filename:'[name].js',
         publicPath:'/',
@@ -32,6 +26,10 @@ const webpackConfig = {
         alias: {
             Store: path.resolve(__dirname, '../../container/src/store/')
         },
+    },
+    externals: {
+        'react': 'React',
+        'react-dom': 'ReactDOM'
     }
 };
 
