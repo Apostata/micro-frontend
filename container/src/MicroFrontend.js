@@ -21,13 +21,12 @@ const MicroFrontend = props=> {
     },[]);
 
 
-  const renderMicroFrontend = (actions) => {
-    const newStore = {...Store, actions}
-    window[`render${name}`](`${name}-container`, history, newStore);
+  const renderMicroFrontend = () => {
+    window[`render${name}`](`${name}-container`, history, Store);
   };
 
   
-return <main id={`${name}-container`} style={{display:"block", width:"100%"}}/>;
+return <main id={`${name}-container`} style={{display:"block", width:"100%"}}>Loading...</main>;
   
 }
 

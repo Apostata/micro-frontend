@@ -1,4 +1,5 @@
 const path = require('path');
+const ENV = process.env.NODE_ENV;
 
 module.exports = {
   contentBase: path.join(__dirname, '../public'), // path para pegar os arquivos do servidor;
@@ -6,9 +7,10 @@ module.exports = {
   index: 'index.html',
   port: 3002,
   hot: true, // hot reload
-  // open: true, // initialize after bundle,
+  open:  ENV==='standalone'? true : false,
   overlay: true, // show errors overlay on screen
   https: false,
+  historyApiFallback: ENV==='standalone'? true : false,
   headers: {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",

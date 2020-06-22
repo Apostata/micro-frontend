@@ -17,77 +17,36 @@ export const routes = [
         path: '/',
         exact: true,
         name: 'Restaurants',
-        component: Restaurants,
-        useActions:[
-            {
-                actionCreator:'language', actions:['setLanguage', 'getLanguage']
-            },
-            {
-                actionCreator:'another', actions:['setAnother']
-            }
-        ]
+        component: Restaurants
     },
     {
         path: '/italiano', //forca o carregamento do microfrontend Restaurants se recarregar a página
         exact: true,
         name: 'Restaurants',
-        component: Restaurants,
-        useActions:[
-            {
-                actionCreator:'language', actions:['setLanguage', 'getLanguage']
-            },
-            {
-                actionCreator:'another', actions:['setAnother']
-            }
-        ]
+        component: Restaurants
     },
     {
         path: '/japones', //forca o carregamento do microfrontend Restaurants se recarregar a página
         exact: true,
         name: 'Restaurants',
-        component: Restaurants,
-        useActions:[
-            {
-                actionCreator:'language', actions:['setLanguage', 'getLanguage']
-            },
-            {
-                actionCreator:'another', actions:['setAnother']
-            }
-        ]
+        component: Restaurants
     },
     {
         path: '/order', 
         exact: true,
         name: 'Order',
-        component: Order,
-        useActions:[
-            {
-                actionCreator:'language', actions:['setLanguage']
-            }
-        ]
+        component: Order
     },
     {
         path: '/order/buy', //forca o carregamento do microfrontend Order se recarregar a página
         exact: true,
         name: 'Order',
-        component: Order,
-        useActions:[
-            {
-                actionCreator:'language', actions:['setLanguage']
-            }
-        ]
+        component: Order
     },
     {
         path: '/order/list', //forca o carregamento do microfrontend Order se recarregar a página
         exact: true,
         name: 'Order',
-        component: Order,
-        useActions:[
-            {
-                actionCreator:'language', actions:['setLanguage']
-            }
-        ]
-    }
-    
-    
+        component: Order
+    }    
 ]

@@ -10,16 +10,4 @@ module.exports = {
   overlay: true, // show errors overlay on screen
   https: false,
   historyApiFallback: true
-  // proxy: {
-  //   "/mf/*": {
-  //     "changeOrigin": true,
-  //     "cookieDomainRewrite": "localhost",
-  //     "logLevel": "debug",
-  //     "target": "http://localhost:3001",
-  //     "secure": true,
-  //     "pathRewrite": {
-  //       "^/mf": ""
-  //     }
-  //   }
-  // }
 };

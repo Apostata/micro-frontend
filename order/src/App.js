@@ -1,12 +1,12 @@
 import React, {Fragment as F} from 'react';
-import { useSelector, useStore } from "react-redux";
+import { useSelector } from "react-redux";
 import { BrowserRouter as Router} from 'react-router-dom';
 import Routes from './routes';
 import Header from './components/Header';
+import {setLanguage} from 'Store/actions/language';
 
 const App = props =>{
-    const {actions} = useStore();
-    console.log(actions);     
+    console.log(setLanguage);     
     const language = useSelector(state=>state.language);
     return (
         <F>

@@ -4,9 +4,9 @@ import {useSelector} from 'react-redux';
 const List = props =>{
     const language = useSelector(state=>state.language);
     return(
-        <sections>
+        <section>
             Lista de compras {language}
-        </sections>
+        </section>
     )
 }
 

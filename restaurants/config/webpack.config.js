@@ -5,11 +5,17 @@ const plugins = require('./plugins');
 
 const ENV = process.env.NODE_ENV;
 const webpackConfig = {
-    mode: ENV !== 'development' ? 'production' : 'development', //modo
+    mode: ENV !== 'development' || ENV !== 'standlone' ? 'production' : 'development', //modo
     context: path.resolve(__dirname, '../src'),
-    entry: {
-        Restaurants:['./index.js']
-    },
+    entry: ENV !== 'standalone'?
+        {
+            Restaurants:['./index.js']
+        }:
+        {   
+            react:['react'],
+            react_dom:['react-dom'],
+            Restaurants:['./index.js']
+        },
     output:{
         filename:'[name].js',
         publicPath:'/',
@@ -22,11 +28,14 @@ const webpackConfig = {
     plugins,
     watch: true,
     resolve: {
-        extensions: [ '.js']
+        extensions: [ '.js'],
+        alias: {
+            Store: path.resolve(__dirname, '../../container/src/store/')
+        },
     }
 };
 
-if(ENV === 'development' && devServer) {
+if(ENV !== 'production' && devServer) {
     webpackConfig.devServer = devServer;
 }
 
