@@ -24,7 +24,12 @@ const webpackConfig = {
     resolve: {
         extensions: [ '.js'],
         alias: {
-            Store: path.resolve(__dirname, '../../container/src/store/')
+            Store: path.resolve(__dirname, '../../container/src/store/'),
+            Actions: path.resolve(__dirname, '../../container/src/store/actions'),
+            Reducers: path.resolve(__dirname, '../../container/src/store/Reducers'),
+            redux: path.resolve(__dirname, '../../container/node_modules/redux/lib/redux.js'),
+            'react-redux': path.resolve(__dirname, '../../container/node_modules/react-redux/lib/'),
+            'redux-thunk': path.resolve(__dirname, '../../container/node_modules/redux-thunk/lib/'),
         },
     },
     externals: {

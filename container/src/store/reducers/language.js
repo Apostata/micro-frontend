@@ -1,4 +1,4 @@
-import {types} from '../actionTypes';
+import {types} from 'Store/actionTypes';
 
 const initialState ='pt_BR';
 

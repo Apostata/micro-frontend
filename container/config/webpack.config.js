@@ -24,7 +24,9 @@ const webpackConfig = {
     watch: ENV === 'development'? true : false,
     resolve: {
         alias: {
-            Actions: path.resolve(__dirname, '../src/store/actions/'), //to dynamic import
+            Store: path.resolve(__dirname, '../src/store/'), //to dynamic import
+            Actions: path.resolve(__dirname, '../src/store/actions'),
+            Reducers: path.resolve(__dirname, '../src/store/reducers'),
         },
         extensions: [ '.js']
     },

@@ -10,12 +10,16 @@
     "start-server": "cd ../server && npm start",
     "start-restaurants": "cd ../restaurants && npm start",
     "start-order": "cd ../order && npm start",
+    "standalone-restaurants": "concurrently --kill-others --kill-others-on-fail -p name --names \"server,restaurants\" \"npm run start-server\" \"cd ../restaurants && npm run standalone\" ",
+    "standalone-order": "concurrently --kill-others --kill-others-on-fail -p name --names \"server,order\" \"npm run start-server\" \"cd ../order && npm run standalone\" ",
     "build-container": "webpack --config=config/webpack.config.js -p",
     "install-all": "npm run install-container && npm run install-server, npm run install-restaurants && npm run install-order",
+    "install-fronts": "npm run install-container && npm run install-restaurants && npm run install-order",
     "install-container": "npm install",
     "install-server": "cd ../server && npm start",
     "install-restaurants": "cd ../restaurants && npm start",
-    "intall-order": "cd ../order && npm install"
+    "intall-order": "cd ../order && npm install",
+    "remove-all": "rimraf node_modules && cd ../restaurants && rimraf node_modules && cd ../orders && rimraf node_modules"
   },
   "author": "Rene Souza",
   "license": "ISC",

@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import languageReducer from './language';
-import anotherReducer from './another'
+import languageReducer from 'Reducers/language';
+import anotherReducer from 'Reducers/another'
 
 export default combineReducers({
     language: languageReducer,

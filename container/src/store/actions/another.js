@@ -1,4 +1,4 @@
-import {types} from '../actionTypes';
+import {types} from 'Store/actionTypes';
 
 export const setAnother = (another) =>{
     return { type: types.SET_ANOTHER, payload:another };

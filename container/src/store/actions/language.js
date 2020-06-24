@@ -1,4 +1,4 @@
-import {types} from '../actionTypes';
+import {types} from 'Store/actionTypes';
 
 export const setLanguage = (language) =>{
     return { type: types.SET_LANGUAGE, payload:language };
